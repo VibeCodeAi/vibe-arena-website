@@ -40,7 +40,7 @@ function FinalCTA() {
       {/* Background element with screenshot */}
       <div className="absolute inset-0 opacity-20 z-0 overflow-hidden">
         <img 
-          src="/ss.png" 
+          src="/bg.png" 
           alt="Vibe Arena Gameplay" 
           className="w-full h-full object-cover object-center blur-sm"
         />

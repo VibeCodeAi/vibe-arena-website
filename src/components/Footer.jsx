@@ -1,17 +1,5 @@
 import React from 'react';
-
-// Pixel art logo component
-function PixelLogo() {
-  return (
-    <div className="relative">
-      <div className="absolute -inset-1 bg-cosmic-blue-light/20 blur-md rounded-lg"></div>
-      <div className="relative font-pixel text-2xl text-white inline-flex">
-        <span className="text-cosmic-blue-light mr-1">VIBE</span>
-        <span>ARENA</span>
-      </div>
-    </div>
-  );
-}
+import { PixelLogo } from './PixelLogo';
 
 // Link component with icon
 function FooterLink({ href, icon, children }) {
@@ -22,19 +10,6 @@ function FooterLink({ href, icon, children }) {
         {children}
       </a>
     </li>
-  );
-}
-
-// Social button with icon
-function SocialButton({ href, icon, children }) {
-  return (
-    <a 
-      href={href} 
-      className="px-4 py-2 bg-cosmic-black/50 rounded-lg border border-cosmic-blue-light/20 hover:border-cosmic-blue-light/50 transition-all duration-300 flex items-center gap-2 hover:bg-cosmic-black/70"
-    >
-      <i className={`${icon} text-cosmic-blue-light`}></i>
-      <span className="font-cyber text-sm">{children}</span>
-    </a>
   );
 }
 

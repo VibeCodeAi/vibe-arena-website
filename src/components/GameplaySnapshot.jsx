@@ -92,7 +92,7 @@ function GameplaySnapshot() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img 
-          src="/ss.png" 
+          src="/bg.png" 
           alt="Vibe Arena Gameplay" 
           className="w-full h-full object-cover object-center"
         />
