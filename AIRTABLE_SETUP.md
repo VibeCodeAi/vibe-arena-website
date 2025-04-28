@@ -28,22 +28,22 @@ To find your Base ID:
 
 ## Environment Variables
 
-Create a `.env.local` file in the root of your project with the following variables:
+Create a `.env` file in the root of your project with the following variables:
 
 ```
-NEXT_PUBLIC_AIRTABLE_API_KEY=your_airtable_api_key_here
-NEXT_PUBLIC_AIRTABLE_BASE_ID=your_airtable_base_id_here
-NEXT_PUBLIC_AIRTABLE_TABLE_NAME=Waitlist
+AIRTABLE_API_KEY=your_airtable_api_key_here
+AIRTABLE_BASE_ID=your_airtable_base_id_here
+AIRTABLE_TABLE_NAME=Waitlist
 ```
 
 Replace the placeholder values with your actual API key and base ID.
 
 ## Security Considerations
 
-Note that using `NEXT_PUBLIC_` prefix means these variables will be exposed in the client-side code. For a production environment, consider:
+Note that using environment variables in a Vite client-side application means these variables will be embedded in your JavaScript bundle. For a production environment, consider:
 
-1. Creating a server-side API endpoint to handle the Airtable communication
-2. Use environment variables without the `NEXT_PUBLIC_` prefix for the server-side code
-3. Implement rate limiting and other security measures
+1. Creating a backend API endpoint to handle the Airtable communication
+2. Moving sensitive API keys to the server-side environment
+3. Implementing rate limiting and other security measures
 
 For a simple waitlist implementation as described here, the current approach is acceptable for a prototype, but should be replaced with a more secure solution before going to production. 
