@@ -1,0 +1,35 @@
+This file outlines the rules and plan for building the Vibe Arena landing page.
+
+## Project Goal
+Create a compelling landing page for the game "Vibe Arena" to attract early users and build a waitlist. The page should effectively communicate the game's concept and unique selling points.
+
+## Technology Stack
+- **Framework:** React (using Vite for setup and development)
+- **Styling:** Tailwind CSS v3
+- **Hosting:** GitHub Pages
+
+## Design Principles
+- **Inspiration:** The visual style should be inspired by the provided game screenshot (dark, cosmic, magical theme with pixel art elements where appropriate). Use blues, purples, oranges, and blacks as primary colors, drawing from the screenshot's palette.
+- **Layout:** Follow the section structure provided in the copy dump. Implement a responsive design that works well on desktop and mobile.
+- **Interactivity:**
+    - Implement a sticky header/banner for the email CTA after the user scrolls past the hero section.
+    - Add subtle hover animations to CTA buttons (e.g., "summon pulse").
+    - Use subtle fade-in animations for sections on scroll ("summoning circle glow").
+    - Consider using "cosmic crack" visuals for section dividers if feasible without external graphic assets initially.
+- **Font:** Choose a font that complements the pixel art style, possibly a modern pixel font or a clean sans-serif that pairs well.
+
+## Content Implementation
+- Use the provided copy dump directly for headlines, body text, CTAs, and microcopy.
+- Select one option from the provided choices for headlines, CTAs, etc., for the initial implementation. We can swap them out later if needed.
+
+## Future Considerations
+- **Analytics:** Plan for integration with an analytics platform (e.g., Google Analytics, Plausible).
+- **GDPR:** Implement a cookie consent banner/mechanism when analytics are added.
+- **Email Backend:** The email signup form will initially be static or require manual setup later for actual list building (e.g., using Netlify Forms, Formspree, or a dedicated email service).
+
+## Development Process
+1. Set up the React/Vite project with Tailwind CSS v3.
+2. Create React components for each section defined in the copy dump.
+3. Implement the layout and styling using Tailwind CSS, adhering to the design principles.
+4. Configure deployment to GitHub Pages.
+5. Iterate on design and functionality based on feedback. 

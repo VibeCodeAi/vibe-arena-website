@@ -1,0 +1,22 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="8" fill="#0f172a"/>
+  
+  <!-- Pixel V -->
+  <rect x="10" y="16" width="6" height="6" fill="#3b82f6"/>
+  <rect x="16" y="22" width="6" height="6" fill="#3b82f6"/>
+  <rect x="22" y="28" width="6" height="6" fill="#3b82f6"/>
+  <rect x="28" y="34" width="6" height="6" fill="#3b82f6"/>
+  <rect x="34" y="28" width="6" height="6" fill="#3b82f6"/>
+  <rect x="40" y="22" width="6" height="6" fill="#3b82f6"/>
+  <rect x="46" y="16" width="6" height="6" fill="#3b82f6"/>
+  
+  <!-- Pixel A -->
+  <rect x="22" y="40" width="6" height="6" fill="#f97316"/>
+  <rect x="28" y="40" width="6" height="6" fill="#f97316"/>
+  <rect x="34" y="40" width="6" height="6" fill="#f97316"/>
+  <rect x="16" y="46" width="6" height="6" fill="#f97316"/>
+  <rect x="40" y="46" width="6" height="6" fill="#f97316"/>
+  <rect x="16" y="40" width="6" height="6" fill="#f97316"/>
+  <rect x="40" y="40" width="6" height="6" fill="#f97316"/>
+</svg> 

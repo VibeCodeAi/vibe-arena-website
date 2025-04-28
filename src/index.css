@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cosmic-black text-white font-cyber min-h-screen;
+    background-image: 
+      radial-gradient(rgba(59, 130, 246, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, #0f172a, #1e293b);
+    background-size: 24px 24px, 100% 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cyber tracking-wider;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-cosmic-black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cosmic-blue-light/30 rounded-full hover:bg-cosmic-blue-light/50 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .cosmic-button {
+    @apply bg-cosmic-blue px-6 py-3 rounded-lg text-white font-cyber uppercase tracking-wider transition-all duration-300 hover:bg-cosmic-blue-light hover:shadow-lg hover:shadow-cosmic-blue-light/30 hover:translate-y-[-2px] border border-cosmic-blue-light/20;
+  }
+
+  .cosmic-button-orange {
+    @apply bg-cosmic-orange px-6 py-3 rounded-lg text-white font-cyber uppercase tracking-wider transition-all duration-300 hover:bg-cosmic-orange-light hover:shadow-lg hover:shadow-cosmic-orange-light/30 hover:translate-y-[-2px] border border-cosmic-orange-light/20;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto opacity-80;
+  }
+
+  .feature-block {
+    @apply bg-cosmic-gray/40 backdrop-blur-sm p-6 rounded-lg border border-cosmic-blue-light/30 hover:border-cosmic-blue-light transition-all duration-300 hover:shadow-md hover:shadow-cosmic-blue-light/20;
+  }
+
+  .cosmic-input {
+    @apply bg-cosmic-gray/50 border border-cosmic-blue-light/30 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cosmic-blue-light/50 transition-all duration-300 shadow-inner shadow-black/30;
+  }
+
+  .cosmic-container {
+    @apply container mx-auto px-4 py-16 md:py-24;
+  }
+
+  .cosmic-divider {
+    @apply w-full h-px my-12 bg-gradient-to-r from-transparent via-cosmic-blue-light to-transparent opacity-30;
+  }
+  
+  /* Custom pixel grid animation */
+  .pixel-grid-animated {
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    animation: grid-movement 20s linear infinite;
+  }
+}
+
+@keyframes summoning-glow {
+  0%, 100% {
+    @apply opacity-70;
+    filter: blur(4px);
+  }
+  50% {
+    @apply opacity-100;
+    filter: blur(1px);
+  }
+}
+
+@keyframes grid-movement {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
