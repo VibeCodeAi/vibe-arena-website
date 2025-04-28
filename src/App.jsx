@@ -1,46 +1,26 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import WhatIs from './components/WhatIs'
-import GameplaySnapshot from './components/GameplaySnapshot'
-import ArchitectSection from './components/ArchitectSection'
-import CommunitySection from './components/CommunitySection'
-import BenefitsSection from './components/BenefitsSection'
+import Gameplay from './components/Gameplay'
+import Community from './components/Community'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
-import StickyCTA from './components/StickyCTA'
+import './App.css'
 
 function App() {
-  const [showStickyCTA, setShowStickyCTA] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById('hero-section')
-      if (heroSection) {
-        const heroBottom = heroSection.getBoundingClientRect().bottom
-        setShowStickyCTA(heroBottom < 0)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <div className="app">
+    <main className="bg-cosmic-black text-white min-h-screen">
       <Header />
-      {showStickyCTA && <StickyCTA />}
-      <main>
+      <div className="pt-20">
         <Hero />
         <WhatIs />
-        <GameplaySnapshot />
-        <ArchitectSection />
-        <CommunitySection />
-        <BenefitsSection />
+        <Gameplay />
+        <Community />
         <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </main>
   )
 }
 

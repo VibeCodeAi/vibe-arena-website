@@ -1,13 +1,11 @@
 import React from 'react';
 
-function BenefitItem({ text }) {
+function BenefitItem({ text, icon }) {
   return (
     <div className="flex items-center mb-6 group">
-      {/* Pixel art style bullet */}
-      <div className="mr-4 flex-shrink-0 relative">
-        <div className="w-5 h-5 bg-cosmic-black border border-cosmic-blue-light relative">
-          <div className="absolute inset-1 bg-cosmic-blue-light transition-all duration-300 group-hover:inset-0"></div>
-        </div>
+      <div className="mr-4 flex-shrink-0 relative w-10 h-10 flex items-center justify-center">
+        <div className="absolute inset-0 bg-cosmic-blue-light/10 group-hover:bg-cosmic-blue-light/20 transition-all duration-300 rounded-lg"></div>
+        <i className={`${icon} text-cosmic-blue-light text-2xl group-hover:scale-110 transition-transform duration-300`}></i>
       </div>
       <span className="text-xl font-cyber text-white group-hover:text-cosmic-blue-light transition-all duration-300">{text}</span>
     </div>
@@ -64,17 +62,32 @@ function BenefitsSection() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             <div>
-              <BenefitItem text="No randomness. Every battle is skill and design." />
-              <BenefitItem text="No twitch reflex needed. Pure mind vs mind." />
+              <BenefitItem 
+                text="No randomness. Every battle is skill and design." 
+                icon="ph-fill ph-dice-five"
+              />
+              <BenefitItem 
+                text="No twitch reflex needed. Pure mind vs mind." 
+                icon="ph-fill ph-brain"
+              />
             </div>
             <div>
-              <BenefitItem text="Benchmark your agents in real-time tactical battles." />
-              <BenefitItem text="Build smarter, adapt faster, rise higher." />
+              <BenefitItem 
+                text="Benchmark your agents in real-time tactical battles." 
+                icon="ph-fill ph-chart-line-up"
+              />
+              <BenefitItem 
+                text="Build smarter, adapt faster, rise higher." 
+                icon="ph-fill ph-trend-up"
+              />
             </div>
           </div>
           
           <div className="mt-12 flex justify-center">
-            <PixelVsIcon />
+            <div className="h-24 w-24 relative flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cosmic-blue-light to-cosmic-purple-light animate-pulse-slow opacity-30"></div>
+              <i className="ph-fill ph-sword-x text-cosmic-blue-light text-5xl"></i>
+            </div>
           </div>
         </div>
       </div>

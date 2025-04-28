@@ -13,6 +13,31 @@ function PixelLogo() {
   );
 }
 
+// Link component with icon
+function FooterLink({ href, icon, children }) {
+  return (
+    <li>
+      <a href={href} className="hover:text-cosmic-blue-light transition-colors inline-flex items-center group">
+        <i className={`${icon} mr-2 text-cosmic-blue-light/70 group-hover:text-cosmic-blue-light transition-colors`}></i>
+        {children}
+      </a>
+    </li>
+  );
+}
+
+// Social button with icon
+function SocialButton({ href, icon, children }) {
+  return (
+    <a 
+      href={href} 
+      className="px-4 py-2 bg-cosmic-black/50 rounded-lg border border-cosmic-blue-light/20 hover:border-cosmic-blue-light/50 transition-all duration-300 flex items-center gap-2 hover:bg-cosmic-black/70"
+    >
+      <i className={`${icon} text-cosmic-blue-light`}></i>
+      <span className="font-cyber text-sm">{children}</span>
+    </a>
+  );
+}
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -22,68 +47,42 @@ function Footer() {
       <div className="absolute inset-0 pixel-grid-animated opacity-10"></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0">
+        {/* Main footer content */}
+        <div className="flex flex-col items-center text-center md:text-left md:flex-row md:justify-between md:items-start">
+          {/* Logo and tagline */}
+          <div className="mb-12 md:mb-0">
             <PixelLogo />
             <div className="text-sm text-gray-400 font-cyber mt-2">Build the mind. Unleash the fighter.</div>
           </div>
           
-          <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-10">
+          {/* Footer links */}
+          <div className="grid grid-cols-2 gap-x-16 gap-y-8 md:flex md:space-x-16">
             <div className="text-sm">
-              <div className="text-cosmic-blue-light mb-3 font-cyber uppercase tracking-wider text-xs">Links</div>
-              <ul className="space-y-2 text-gray-400 font-cyber">
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    Contact
-                  </a>
-                </li>
+              <div className="text-cosmic-blue-light mb-4 font-cyber uppercase tracking-wider text-xs">LINKS</div>
+              <ul className="space-y-3 text-gray-400 font-cyber">
+                <FooterLink href="#" icon="ph-fill ph-info">About</FooterLink>
+                <FooterLink href="#" icon="ph-fill ph-article">Blog</FooterLink>
+                <FooterLink href="#" icon="ph-fill ph-envelope">Contact</FooterLink>
               </ul>
             </div>
             
             <div className="text-sm">
-              <div className="text-cosmic-blue-light mb-3 font-cyber uppercase tracking-wider text-xs">Follow</div>
-              <ul className="space-y-2 text-gray-400 font-cyber">
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    Discord
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cosmic-blue-light transition-colors inline-flex items-center">
-                    <div className="w-2 h-2 bg-cosmic-blue-light mr-2"></div>
-                    GitHub
-                  </a>
-                </li>
+              <div className="text-cosmic-blue-light mb-4 font-cyber uppercase tracking-wider text-xs">FOLLOW</div>
+              <ul className="space-y-3 text-gray-400 font-cyber">
+                <FooterLink href="#" icon="ph-fill ph-twitter-logo">Twitter</FooterLink>
+                <FooterLink href="#" icon="ph-fill ph-discord-logo">Discord</FooterLink>
+                <FooterLink href="#" icon="ph-fill ph-github-logo">GitHub</FooterLink>
               </ul>
             </div>
           </div>
         </div>
         
-        <div className="mt-12 pt-4 border-t border-cosmic-blue-light/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-cyber">
-          <div>
+        {/* Footer bottom section */}
+        <div className="mt-12 pt-6 border-t border-cosmic-blue-light/10 flex flex-col items-center md:flex-row md:justify-between text-sm text-gray-500 font-cyber">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
             &copy; {currentYear} Vibe Arena. All rights reserved.
           </div>
-          <div className="mt-4 md:mt-0 flex space-x-6">
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6 items-center">
             <a href="#" className="hover:text-cosmic-blue-light transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-cosmic-blue-light transition-colors">Terms of Service</a>
           </div>

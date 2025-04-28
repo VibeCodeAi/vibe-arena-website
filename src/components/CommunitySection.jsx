@@ -11,6 +11,19 @@ function PixelBullet() {
   );
 }
 
+// Custom card with tech-themed icon
+function RewardCard({ title, iconClass }) {
+  return (
+    <div className="aspect-square bg-cosmic-black/60 rounded-lg p-3 flex flex-col items-center justify-center border border-cosmic-purple-light/20 hover:border-cosmic-purple-light/60 transition-all duration-300 group">
+      <div className="w-16 h-16 mb-3 flex items-center justify-center relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-cosmic-blue-light to-cosmic-purple-light opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-md rounded-full"></div>
+        <i className={`${iconClass} text-cosmic-blue-light text-4xl relative transition-all duration-300 group-hover:text-cosmic-purple-light group-hover:scale-110`}></i>
+      </div>
+      <span className="font-cyber text-sm text-center uppercase tracking-wider group-hover:text-cosmic-purple-light transition-colors duration-300">{title}</span>
+    </div>
+  );
+}
+
 function CommunitySection() {
   return (
     <section id="community" className="cosmic-container">
@@ -60,35 +73,22 @@ function CommunitySection() {
           <div className="absolute -inset-1 bg-gradient-to-r from-cosmic-purple-light to-cosmic-orange-light rounded-lg blur opacity-30"></div>
           <div className="relative h-full bg-cosmic-gray/40 backdrop-blur-sm p-6 rounded-lg border border-cosmic-purple-light/30 flex flex-col justify-center">
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square bg-cosmic-black/60 rounded-lg p-3 flex flex-col items-center justify-center border border-cosmic-purple-light/20 hover:border-cosmic-purple-light/60 transition-all duration-300">
-                  <div className="w-16 h-16 mb-3 relative">
-                    {/* Pixel art style icon */}
-                    <div className="absolute inset-0 grid grid-cols-4 grid-rows-4">
-                      {Array.from({ length: 16 }).map((_, index) => {
-                        const isColored = 
-                          i === 1 ? [0, 1, 4, 5, 9, 12, 13].includes(index) : 
-                          i === 2 ? [0, 1, 4, 5, 6, 9, 10, 13, 14].includes(index) : 
-                          i === 3 ? [2, 3, 6, 7, 8, 9, 10, 13, 14].includes(index) : 
-                          [0, 3, 4, 7, 8, 11, 12, 15].includes(index);
-                        
-                        return (
-                          <div 
-                            key={index} 
-                            className={`w-full h-full ${isColored ? 'bg-cosmic-blue-light' : 'bg-transparent'}`}
-                          ></div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <span className="font-cyber text-sm text-center uppercase tracking-wider">{
-                    i === 1 ? "Architect Badge" :
-                    i === 2 ? "Tournament Access" :
-                    i === 3 ? "Special Golems" :
-                    "Cosmic Themes"
-                  }</span>
-                </div>
-              ))}
+              <RewardCard 
+                title="Architect Badge" 
+                iconClass="ph-fill ph-trophy"
+              />
+              <RewardCard 
+                title="Tournament Access" 
+                iconClass="ph-fill ph-sword"
+              />
+              <RewardCard 
+                title="Special Golems" 
+                iconClass="ph-fill ph-robot"
+              />
+              <RewardCard 
+                title="Cosmic Themes" 
+                iconClass="ph-fill ph-planet"
+              />
             </div>
             
             <div className="mt-8 text-center">

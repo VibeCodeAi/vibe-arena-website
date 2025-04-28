@@ -72,17 +72,17 @@ function FinalCTA() {
           </div>
         </div>
         
-        <div className="mt-16 flex justify-center space-x-4">
-          <a href="#" className="cosmic-button bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center">
-            <PixelSocialIcon type="discord" />
+        <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+            <i className="ph-fill ph-discord-logo mr-2"></i>
             Discord
           </a>
-          <a href="#" className="cosmic-button bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center">
-            <PixelSocialIcon type="twitter" />
+          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+            <i className="ph-fill ph-twitter-logo mr-2"></i>
             Twitter
           </a>
-          <a href="#" className="cosmic-button bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center">
-            <PixelSocialIcon type="github" />
+          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+            <i className="ph-fill ph-github-logo mr-2"></i>
             GitHub
           </a>
         </div>
