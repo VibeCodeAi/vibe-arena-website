@@ -1,29 +1,5 @@
 import React, { useState } from 'react';
 
-// Pixel art social icon
-function PixelSocialIcon({ type }) {
-  return (
-    <div className="w-6 h-6 relative inline-block mr-2">
-      <div className="absolute inset-0 grid grid-cols-3 grid-rows-3">
-        {Array.from({ length: 9 }).map((_, index) => {
-          // Different pixel patterns for different icon types
-          const isColored = 
-            type === 'discord' ? [0, 1, 2, 3, 5, 6, 7, 8].includes(index) : 
-            type === 'twitter' ? [0, 1, 3, 4, 5, 7].includes(index) : 
-            [0, 2, 3, 4, 5, 6, 8].includes(index); // github
-          
-          return (
-            <div 
-              key={index} 
-              className={`w-full h-full ${isColored ? 'bg-cosmic-blue-light' : 'bg-transparent'}`}
-            ></div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 function FinalCTA() {
   const [email, setEmail] = useState('');
 
@@ -73,15 +49,15 @@ function FinalCTA() {
         </div>
         
         <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+          <a href="https://discord.gg/5ACdxCygZS" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
             <i className="ph-fill ph-discord-logo mr-2"></i>
             Discord
           </a>
-          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+          <a href="https://x.com/vibe_arena_com" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
             <i className="ph-fill ph-twitter-logo mr-2"></i>
             Twitter
           </a>
-          <a href="#" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
+          <a href="https://github.com/VibeCodeAi" className="cosmic-button w-full sm:w-auto bg-cosmic-blue/20 hover:bg-cosmic-blue/30 cursor-pointer font-cyber uppercase tracking-wider flex items-center justify-center">
             <i className="ph-fill ph-github-logo mr-2"></i>
             GitHub
           </a>

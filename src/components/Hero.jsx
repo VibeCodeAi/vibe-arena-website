@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { validEmail } from '../utils/logic';
+import { submitEmail } from '../api/submitEmail';
+import { ToastContext } from './Toast';
 
 function Hero() {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { showToast } = useContext(ToastContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically connect this to your email collection service
-    console.log('Email submitted:', email);
-    alert('Thanks for joining the waitlist! We will notify you when the Arena opens.');
-    setEmail('');
+    
+    if (!validEmail(email)) {
+      showToast('Please enter a valid email address', 'error');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      await submitEmail(email);
+      showToast('Thanks for joining the waitlist! We will notify you when the Arena opens.', 'success');
+      setEmail('');
+    } catch (error) {
+      showToast('Failed to join the waitlist. Please try again later.', 'error');
+      console.error('Error submitting email:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -50,9 +69,14 @@ function Hero() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  disabled={isSubmitting}
                 />
-                <button type="submit" className="cosmic-button py-2 font-cyber tracking-wider text-lg w-full">
-                  JOIN THE ARENA EARLY
+                <button 
+                  type="submit" 
+                  className={`cosmic-button py-2 font-cyber tracking-wider text-lg w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'JOINING...' : 'JOIN THE ARENA EARLY'}
                 </button>
                 <p className="text-sm mt-2 text-gray-400 font-cyber">No spam. Only cosmic updates.</p>
               </form>

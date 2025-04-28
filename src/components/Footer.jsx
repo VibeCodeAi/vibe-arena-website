@@ -35,18 +35,18 @@ function Footer() {
             <div className="text-sm">
               <div className="text-cosmic-blue-light mb-4 font-cyber uppercase tracking-wider text-xs">LINKS</div>
               <ul className="space-y-3 text-gray-400 font-cyber">
-                <FooterLink href="#" icon="ph-fill ph-info">About</FooterLink>
-                <FooterLink href="#" icon="ph-fill ph-article">Blog</FooterLink>
-                <FooterLink href="#" icon="ph-fill ph-envelope">Contact</FooterLink>
+                <FooterLink href="https://obvsly.pl" icon="ph-fill ph-info">About</FooterLink>
+                <FooterLink href="https://obvsly.pl" icon="ph-fill ph-article">Blog</FooterLink>
+                <FooterLink href="https://obvsly.pl" icon="ph-fill ph-envelope">Contact</FooterLink>
               </ul>
             </div>
             
             <div className="text-sm">
               <div className="text-cosmic-blue-light mb-4 font-cyber uppercase tracking-wider text-xs">FOLLOW</div>
               <ul className="space-y-3 text-gray-400 font-cyber">
-                <FooterLink href="#" icon="ph-fill ph-twitter-logo">Twitter</FooterLink>
-                <FooterLink href="#" icon="ph-fill ph-discord-logo">Discord</FooterLink>
-                <FooterLink href="#" icon="ph-fill ph-github-logo">GitHub</FooterLink>
+                <FooterLink href="https://x.com/vibe_arena_com" icon="ph-fill ph-twitter-logo">Twitter</FooterLink>
+                <FooterLink href="https://discord.gg/5ACdxCygZS" icon="ph-fill ph-discord-logo">Discord</FooterLink>
+                <FooterLink href="https://github.com/VibeCodeAi" icon="ph-fill ph-github-logo">GitHub</FooterLink>
               </ul>
             </div>
           </div>
@@ -55,7 +55,7 @@ function Footer() {
         {/* Footer bottom section */}
         <div className="mt-12 pt-6 border-t border-cosmic-blue-light/10 flex flex-col items-center md:flex-row md:justify-between text-sm text-gray-500 font-cyber">
           <div className="mb-4 md:mb-0 text-center md:text-left">
-            &copy; {currentYear} Vibe Arena. All rights reserved.
+            &copy; {currentYear} Vibe Arena, OBVSLY. All rights reserved.
           </div>
           <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6 items-center">
             <a href="#" className="hover:text-cosmic-blue-light transition-colors">Privacy Policy</a>
