@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { validEmail } from '../utils/logic';
+import { submitEmail } from '../api/submitEmail';
+import { ToastContext } from './Toast';
 
 function FinalCTA() {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { showToast } = useContext(ToastContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically connect this to your email collection service
-    console.log('Email submitted from final CTA:', email);
-    alert('Thanks for joining the waitlist! We will notify you when the Arena opens.');
-    setEmail('');
+    
+    if (!validEmail(email)) {
+      showToast('Please enter a valid email address', 'error');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      await submitEmail(email);
+      showToast('Thanks for joining the waitlist! We will notify you when the Arena opens.', 'success');
+      setEmail('');
+    } catch (error) {
+      showToast('Failed to join the waitlist. Please try again later.', 'error');
+      console.error('Error submitting email:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -39,9 +58,14 @@ function FinalCTA() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={isSubmitting}
               />
-              <button type="submit" className="cosmic-button-orange text-lg py-4 px-8 font-cyber uppercase tracking-wider">
-                SUMMON YOUR GOLEM
+              <button 
+                type="submit" 
+                className={`cosmic-button-orange text-lg py-4 px-8 font-cyber uppercase tracking-wider ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'SUMMONING...' : 'SUMMON YOUR GOLEM'}
               </button>
               <p className="text-sm mt-4 text-gray-400 font-cyber">Only the architects will enter first.</p>
             </form>
