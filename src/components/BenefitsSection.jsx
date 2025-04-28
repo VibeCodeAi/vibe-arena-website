@@ -82,13 +82,6 @@ function BenefitsSection() {
               />
             </div>
           </div>
-          
-          <div className="mt-12 flex justify-center">
-            <div className="h-24 w-24 relative flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cosmic-blue-light to-cosmic-purple-light animate-pulse-slow opacity-30"></div>
-              <i className="ph-fill ph-sword-x text-cosmic-blue-light text-5xl"></i>
-            </div>
-          </div>
         </div>
       </div>
       

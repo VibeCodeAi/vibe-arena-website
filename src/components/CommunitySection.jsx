@@ -3,7 +3,7 @@ import React from 'react';
 // Pixel art style bullet
 function PixelBullet() {
   return (
-    <div className="mr-3 flex-shrink-0">
+    <div className="mr-3 mt-[6px] flex-shrink-0">
       <div className="w-4 h-4 bg-cosmic-blue-light relative">
         <div className="absolute top-1 left-1 w-2 h-2 bg-cosmic-black"></div>
       </div>

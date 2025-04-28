@@ -39,21 +39,21 @@ function Hero() {
         
         <div className="mb-16 relative">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-cosmic-blue-light via-cosmic-purple-light to-cosmic-red-light rounded-lg blur opacity-75 transition duration-1000 animate-pulse-slow"></div>
-          <div className="relative max-w-md mx-auto bg-cosmic-black/80 backdrop-blur-sm rounded-lg p-6 border border-cosmic-blue-light/20">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+          <div className="relative max-w-2xl mx-auto bg-cosmic-black/80 backdrop-blur-sm rounded-lg p-8 border border-cosmic-blue-light/20">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="cosmic-input flex-grow font-cyber"
+                className="cosmic-input w-full max-w-md font-cyber text-center"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button type="submit" className="cosmic-button whitespace-nowrap font-cyber tracking-wider">
+              <button type="submit" className="cosmic-button py-4 px-8 font-cyber tracking-wider text-lg">
                 JOIN THE ARENA EARLY
               </button>
+              <p className="text-sm mt-2 text-gray-400 font-cyber">No spam. Only cosmic updates.</p>
             </form>
-            <p className="text-sm mt-4 text-gray-400 font-cyber">No spam. Only cosmic updates.</p>
           </div>
         </div>
         
