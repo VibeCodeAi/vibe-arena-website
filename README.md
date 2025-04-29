@@ -50,6 +50,16 @@ The current implementation embeds the Airtable API key directly in the client-si
 
 For production applications with sensitive data, consider implementing a backend server to handle API calls and keep credentials secure.
 
+## Google Analytics and Consent Manager
+
+This website integrates Google Analytics for usage tracking and a Consent Manager for GDPR compliance. The integration is handled by the `GoogleAnalytics` component which:
+
+- Sets up Google Analytics tracking with ID `G-RQW98M0DPV`
+- Implements a consent manager from consentmanager.net
+- Loads all scripts dynamically at runtime
+
+The implementation respects user privacy by working with the consent manager to properly handle user consent preferences for tracking.
+
 ## Building for Production
 
 To build the project for production:
