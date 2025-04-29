@@ -19,21 +19,21 @@ export default function GoogleAnalytics() {
     document.head.appendChild(script2);
 
     // Consent Manager
-    // const script3 = document.createElement('script');
-    // const id = '3669333412165';
-    // script3.type = 'text/javascript';
-    // script3.setAttribute('data-cmp-ab', '1');
-    // script3.src = `https://cdn.consentmanager.net/delivery/autoblocking/${id}.js`;
-    // script3.setAttribute('data-cmp-host', 'a.delivery.consentmanager.net');
-    // script3.setAttribute('data-cmp-cdn', 'cdn.consentmanager.net');
-    // script3.setAttribute('data-cmp-codesrc', '0');
-    // document.head.appendChild(script3);
+    const script3 = document.createElement('script');
+    const consentManagerId = '4c4ae914d28d7';
+    script3.type = 'text/javascript';
+    script3.setAttribute('data-cmp-ab', '1');
+    script3.src = `https://cdn.consentmanager.net/delivery/autoblocking/${consentManagerId}.js`;
+    script3.setAttribute('data-cmp-host', 'd.delivery.consentmanager.net');
+    script3.setAttribute('data-cmp-cdn', 'cdn.consentmanager.net');
+    script3.setAttribute('data-cmp-codesrc', '0');
+    document.head.appendChild(script3);
 
     // Cleanup function
     return () => {
       document.head.removeChild(script1);
       document.head.removeChild(script2);
-      // document.head.removeChild(script3);
+      document.head.removeChild(script3);
     };
   }, []);
 
