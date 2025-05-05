@@ -52,7 +52,7 @@ function Hero() {
             <span className="text-cosmic-orange-light">Rule the battlefield.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-12 text-gray-200 font-cyber">
+          <p className="text-xl font-bold md:font-normal md:text-2xl mb-12 text-gray-200 font-cyber">
             Craft your agent. Throw it into the food chain.
             <br />
             Predator or prey? Let's find out.

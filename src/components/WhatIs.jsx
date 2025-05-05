@@ -37,7 +37,7 @@ function WhatIs() {
             </div>
           </div>
           
-          <div className="flex-1 relative">
+          <div className="hidden lg:block flex-1 relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-cosmic-blue-light to-cosmic-purple-light rounded-lg blur opacity-30"></div>
             <div className="relative aspect-square bg-cosmic-black/90 rounded-lg flex items-center justify-center overflow-hidden border-2 border-cosmic-blue-light/30">
               {/* Corner pixel decorations */}
