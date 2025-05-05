@@ -40,7 +40,7 @@ function Hero() {
         <img 
           src="/bg.png" 
           alt="Vibe Arena Gameplay" 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover md:object-center object-left"
         />
       </div>
       
