@@ -63,8 +63,9 @@ function CommunitySection() {
           </p>
           
           <div className="mt-10">
-            <a href="#final-cta" className="cosmic-button-orange font-cyber uppercase tracking-wider">
-              JOIN THE WAITLIST
+            <a href="https://discord.gg/5ACdxCygZS" className="cosmic-button-orange font-cyber uppercase tracking-wider">
+            <i className="ph-fill ph-discord-logo mr-2"></i>
+              JOIN THE COMMUNITY
             </a>
           </div>
         </div>
