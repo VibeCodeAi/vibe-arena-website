@@ -47,7 +47,7 @@ function FinalCTA() {
           Ready to create your champion?
         </h2>
         
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-2xl mx-auto mt-4 sm:mt-8 md:mt-16 lg:mt-24">
           <div className="absolute -inset-1 bg-gradient-to-r from-cosmic-blue-light via-cosmic-purple-light to-cosmic-orange-light rounded-lg blur opacity-75 animate-pulse-slow"></div>
           <div className="relative bg-cosmic-black/90 backdrop-blur-sm p-8 rounded-lg border border-cosmic-blue-light/20">
             <form onSubmit={handleSubmit} className="flex flex-col items-center">
@@ -62,12 +62,12 @@ function FinalCTA() {
               />
               <button 
                 type="submit" 
-                className={`cosmic-button-orange text-lg py-4 px-8 font-cyber uppercase tracking-wider ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`cosmic-button-orange w-full max-w-lg text-lg py-2 px-8 font-cyber uppercase tracking-wider ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'JOINING...' : 'JOIN THE ARENA'}
+                {isSubmitting ? 'JOINING...' : 'JOIN THE WAITLIST'}
               </button>
-              <p className="text-sm mt-4 text-gray-400 font-cyber">Only the architects will enter first.</p>
+              <p className="text-sm mt-4 text-gray-400 font-cyber">We'll notify you when the public alpha is available. No spam.</p>
             </form>
           </div>
         </div>

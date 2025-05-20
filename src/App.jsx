@@ -20,10 +20,10 @@ function App() {
         <main className="pt-16">
           <Hero />
           <WhatIs />
-          <GameplaySnapshot />
-          <BenefitsSection />
+          {/* <GameplaySnapshot /> */}
+          {/* <BenefitsSection /> */}
           <CommunitySection />
-          <ArchitectSection />
+          {/* <ArchitectSection /> */}
           <FinalCTA />
         </main>
         <Footer />
