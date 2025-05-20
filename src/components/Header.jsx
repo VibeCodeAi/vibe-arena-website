@@ -29,7 +29,7 @@ function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#what-is" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Game</a>
-          <a href="#gameplay" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Gameplay</a>
+          {/* <a href="#gameplay" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Gameplay</a> */}
           <a href="#community" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Community</a>
           <a href="#final-cta" className="cosmic-button py-2 px-5 font-cyber uppercase tracking-wider text-sm">Join Waitlist</a>
         </nav>
@@ -44,13 +44,13 @@ function Header() {
             >
               Game
             </a>
-            <a 
+            {/* <a 
               href="#gameplay" 
               className="text-white hover:text-cosmic-blue-light transition duration-200 py-2 font-cyber uppercase tracking-wide text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Gameplay
-            </a>
+            </a> */}
             <a 
               href="#community" 
               className="text-white hover:text-cosmic-blue-light transition duration-200 py-2 font-cyber uppercase tracking-wide text-center"
