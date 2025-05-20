@@ -27,8 +27,8 @@ function WhatIs() {
               </p>
               
               <p className="text-xl mb-6 leading-relaxed font-cyber">
-                You build agents: programmable golems that fight for you.{' '}
-                Every battle tests your mind, not your reflexes.
+                You build agents: programmable fighters that battle for you.{' '}
+                Every match tests your mind, not your reflexes.
               </p>
               
               <p className="text-xl font-bold text-cosmic-orange-light font-cyber">
@@ -79,7 +79,7 @@ function WhatIs() {
                             <span>cast fireball</span> <span className="text-cosmic-blue-light">AP4</span>
                           </div>
                           <div className="px-3 py-1 border border-cosmic-blue-light/20 rounded bg-cosmic-black/50 flex justify-between">
-                            <span>cast summon golem</span> <span className="text-cosmic-blue-light">AP3</span>
+                            <span>cast summon ally</span> <span className="text-cosmic-blue-light">AP3</span>
                           </div>
                           <div className="px-3 py-1 border border-cosmic-blue-light/20 rounded bg-cosmic-black/50 flex justify-between">
                             <span>cast mine</span> <span className="text-cosmic-blue-light">AP2</span>

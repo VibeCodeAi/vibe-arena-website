@@ -111,20 +111,20 @@ function GameplaySnapshot() {
           
           <FeatureBlock 
             iconType="brain"
-            title="Design Golems"
-            description="Program your agent's actions and behaviors with code, GUI, or prompt blocks. Your intelligence design is the weapon."
+            title="Design Agents"
+            description="Program your agent's behaviors. Your intelligence design is the weapon."
           />
           
           <FeatureBlock 
             iconType="cycle"
             title="Weekly Trials"
-            description="New affixes, bosses, and limited-time modes keep the battlefield fresh. Adapt your design or perish."
+            description="New challenges, bosses, and limited-time modes keep the arena fresh. Adapt or get left behind."
           />
           
           <FeatureBlock 
             iconType="trophy"
             title="Ranked Seasons"
-            description="Climb the ladder. Dominate the food chain. Build your legacy as the greatest architect of intelligence."
+            description="Climb the ladder. Test your designs. Build a legacy as an architect of intelligence."
           />
         </div>
         
@@ -132,7 +132,7 @@ function GameplaySnapshot() {
           <div className="inline-block p-6 bg-cosmic-black/40 backdrop-blur-sm border border-cosmic-blue-light/20 rounded-lg">
             <p className="text-2xl font-cyber">
               <span className="text-cosmic-blue-light block mb-2">You are the architect.</span>
-              <span className="opacity-80 font-cyber">The one who bends the battlefield without ever stepping onto it.</span>
+              <span className="opacity-80 font-cyber">The one who creates without stepping onto the battlefield.</span>
             </p>
           </div>
         </div>

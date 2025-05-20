@@ -24,9 +24,9 @@ function ArchitectSection() {
               <div className="space-y-6">
                 <div className="border-l-4 border-cosmic-blue-light pl-4">
                   <p className="text-xl leading-relaxed font-cyber">
-                    <span className="font-bold text-cosmic-blue-light">You are the mage behind the golem.</span>
+                    <span className="font-bold text-cosmic-blue-light">You are the architect behind the agent.</span>
                     <br />
-                    The unseen hand shaping the battlefield.
+                    The mind that shapes the battlefield.
                   </p>
                 </div>
                 

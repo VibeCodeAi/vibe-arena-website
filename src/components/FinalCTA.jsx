@@ -44,7 +44,7 @@ function FinalCTA() {
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-cosmic-orange-light font-cyber">
-          Ready to summon your champion?
+          Ready to create your champion?
         </h2>
         
         <div className="relative max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ function FinalCTA() {
                 className={`cosmic-button-orange text-lg py-4 px-8 font-cyber uppercase tracking-wider ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'SUMMONING...' : 'SUMMON YOUR GOLEM'}
+                {isSubmitting ? 'JOINING...' : 'JOIN THE ARENA'}
               </button>
               <p className="text-sm mt-4 text-gray-400 font-cyber">Only the architects will enter first.</p>
             </form>
