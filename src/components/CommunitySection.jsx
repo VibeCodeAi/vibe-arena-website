@@ -175,7 +175,7 @@ function CommunitySection() {
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 lg:mb-16">
         <FeatureBlock 
           icon="ph-fill ph-code-block" 
           color="cosmic-blue-light"
@@ -204,8 +204,41 @@ function CommunitySection() {
           description="Help establish tournaments, challenges, and events. The early architects will become the pillars of our competitive ecosystem." 
         />
       </div>
+
+      {/* Architect Rewards section */}
+      <div className="bg-cosmic-black/60 backdrop-blur-sm rounded-lg border border-cosmic-orange-light/30 p-6 md:p-8 mb-16 lg:mb-32">
+        <h3 className="text-xl md:text-2xl font-cyber font-bold text-cosmic-orange-light mb-6 text-center">
+          Architect Rewards
+        </h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-cosmic-black/40 p-4 rounded border border-cosmic-orange-light/20 text-center">
+            <div className="w-12 h-12 mx-auto mb-3 bg-cosmic-orange-light/20 rounded-lg flex items-center justify-center">
+              <i className="ph-fill ph-crown text-cosmic-orange-light text-2xl"></i>
+            </div>
+            <h4 className="font-cyber text-lg text-cosmic-white font-bold mb-2">Custom Badges</h4>
+            <p className="text-cosmic-white/70 text-sm">Permanent badge on your profile. No one gets it later. Simple as that.</p>
+          </div>
+          
+          <div className="bg-cosmic-black/40 p-4 rounded border border-cosmic-orange-light/20 text-center">
+            <div className="w-12 h-12 mx-auto mb-3 bg-cosmic-orange-light/20 rounded-lg flex items-center justify-center">
+              <i className="ph-fill ph-paint-brush text-cosmic-orange-light text-2xl"></i>
+            </div>
+            <h4 className="font-cyber text-lg text-cosmic-white font-bold mb-2">Exclusive Skins</h4>
+            <p className="text-cosmic-white/70 text-sm">Custom visuals only early builders get. Not purchasable later.</p>
+          </div>
+          
+          <div className="bg-cosmic-black/40 p-4 rounded border border-cosmic-orange-light/20 text-center">
+            <div className="w-12 h-12 mx-auto mb-3 bg-cosmic-orange-light/20 rounded-lg flex items-center justify-center">
+              <i className="ph-fill ph-medal text-cosmic-orange-light text-2xl"></i>
+            </div>
+            <h4 className="font-cyber text-lg text-cosmic-white font-bold mb-2">Arena Build Influence</h4>
+            <p className="text-cosmic-white/70 text-sm">Direct input on game mechanics and future updates. If it's cool and we like it, we'll build it.</p>
+          </div>
+        </div>
+      </div>
       
-      <div className="mt-20 text-center">
+      <div className="mt-12 text-center">
         <div className="inline-block relative">
           <div className="absolute -inset-2 bg-gradient-to-r from-cosmic-blue-light via-cosmic-purple-light to-cosmic-orange-light rounded-lg blur-lg opacity-70 animate-pulse-slow"></div>
           <a 
@@ -216,7 +249,7 @@ function CommunitySection() {
             JOIN OUR DISCORD
           </a>
         </div>
-      </div>      
+      </div>
     </section>
   );
 }
