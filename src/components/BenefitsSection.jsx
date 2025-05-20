@@ -83,9 +83,7 @@ function BenefitsSection() {
             </div>
           </div>
         </div>
-      </div>
-      
-      <div className="cosmic-divider"></div>
+      </div>      
     </section>
   );
 }

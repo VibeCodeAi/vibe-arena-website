@@ -61,8 +61,6 @@ function ArchitectSection() {
           </div>
         </div>
       </div>
-      
-      <div className="cosmic-divider"></div>
     </section>
   );
 }

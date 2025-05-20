@@ -216,9 +216,7 @@ function CommunitySection() {
             JOIN OUR DISCORD
           </a>
         </div>
-      </div>
-      
-      <div className="cosmic-divider"></div>
+      </div>      
     </section>
   );
 }

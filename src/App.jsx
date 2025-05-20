@@ -11,6 +11,12 @@ import Footer from './components/Footer'
 import { ToastProvider } from './components/Toast'
 import GoogleAnalytics from './components/GoogleAnalytics'
 
+function CosmicDivider() {
+  return (
+    <div className="cosmic-divider"></div>
+  )
+}
+
 function App() {
   return (
     <ToastProvider>
@@ -20,11 +26,14 @@ function App() {
         <main className="pt-16">
           <Hero />
           <WhatIs />
+          <CosmicDivider />
           {/* <GameplaySnapshot /> */}
           {/* <BenefitsSection /> */}
           <CommunitySection />
+          <CosmicDivider />
           {/* <ArchitectSection /> */}
           <FinalCTA />
+          <CosmicDivider />
         </main>
         <Footer />
       </div>
