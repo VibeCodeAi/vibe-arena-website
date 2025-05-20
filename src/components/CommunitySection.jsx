@@ -83,7 +83,7 @@ function CommunitySection() {
                 iconClass="ph-fill ph-sword"
               />
               <RewardCard 
-                title="Special Golems" 
+                title="Special Skins" 
                 iconClass="ph-fill ph-robot"
               />
               <RewardCard 

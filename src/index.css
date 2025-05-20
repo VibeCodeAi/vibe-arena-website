@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Core Colors */
+  --color-cosmic-blue: #2B5DFF;
+  --color-cosmic-orange: #FF6C11;
+  --color-cosmic-red: #D0302F;
+  --color-cosmic-purple: #5D3AFF;
+  --color-cosmic-black: #1C1B29;
+  --color-cosmic-white: #F4F4F9;
+  
+  /* UI States */
+  --color-cosmic-green: #37F289;
+  --color-cosmic-yellow: #F7D633;
+  --color-cosmic-gray: #3F3F4D;
+  --color-cosmic-stone: #7A7A87;
+}
+
 @layer base {
   body {
     @apply bg-cosmic-black text-white font-cyber min-h-screen;
@@ -69,6 +85,91 @@
       linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
     animation: grid-movement 20s linear infinite;
   }
+
+  /* Pixel-art specific styles */
+  .pixel-border {
+    @apply relative;
+    image-rendering: pixelated;
+  }
+  
+  .pixel-border::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-cosmic-gray;
+    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.1),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .pixel-button {
+    @apply bg-cosmic-blue relative px-4 py-2 text-cosmic-white font-pixel text-xs uppercase tracking-wider;
+    image-rendering: pixelated;
+    box-shadow: 2px 2px 0 #1a3ac9,
+                -2px -2px 0 #3c6dff;
+    transition: all 0.1s;
+  }
+  
+  .pixel-button:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #1a3ac9,
+                -1px -1px 0 #3c6dff;
+  }
+  
+  .pixel-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #1a3ac9;
+  }
+  
+  .pixel-grid-animated {
+    @apply bg-cosmic-black;
+    background-image: 
+      linear-gradient(rgba(61, 58, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 58, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-movement 20s linear infinite;
+  }
+  
+  @keyframes grid-movement {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 20px 20px;
+    }
+  }
+  
+  .cosmic-container {
+    @apply relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center font-cyber;
+  }
+  
+  .cosmic-divider {
+    @apply w-full h-px my-16 bg-gradient-to-r from-transparent via-cosmic-blue to-transparent opacity-30;
+  }
+  
+  /* Game Element Styles */
+  .game-hex-tile {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    @apply bg-cosmic-gray border border-cosmic-blue-light relative;
+  }
+  
+  .game-entity {
+    @apply relative w-10 h-10;
+    image-rendering: pixelated;
+  }
+  
+  .game-entity.blue-team {
+    @apply bg-cosmic-blue;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+  
+  .game-entity.orange-team {
+    @apply bg-cosmic-orange;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
 }
 
 @keyframes summoning-glow {
@@ -79,14 +180,5 @@
   50% {
     @apply opacity-100;
     filter: blur(1px);
-  }
-}
-
-@keyframes grid-movement {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 30px 30px;
   }
 }
