@@ -358,7 +358,7 @@ function PlayerStats({ player, gameState, isActive, currentThought, isThinking, 
           <i className="ph-fill ph-brain mr-1"></i>
           AI Decision Process
         </div>
-        <div className="text-cosmic-white/90 text-sm font-cyber leading-relaxed" style={{ minHeight: '80px' }}>
+        <div className="text-cosmic-white/90 text-xs sm:text-sm font-cyber leading-relaxed" style={{ minHeight: '80px' }}>
           {isThinking && currentThought ? (
             <TypewriterText 
               text={currentThought}
@@ -569,9 +569,6 @@ function GameSimulation() {
       <div className="relative z-10">
         {/* Header - Fixed height */}
         <div className="text-center mb-6" style={{ minHeight: '68px' }}>
-          <h3 className="font-pixel text-cosmic-blue-light text-2xl mb-2 tracking-wider">
-            AI BATTLE SIMULATION
-          </h3>
           <div className="text-cosmic-purple-light font-cyber text-sm uppercase tracking-wider mb-2" style={{ minHeight: '20px' }}>
             {gameState.currentPhase === GAME_PHASES.BATTLE_END 
               ? `${gameState.winner === 'player1' ? 'ARCANE-AI' : 'MYSTIC-GPT'} WINS!`
