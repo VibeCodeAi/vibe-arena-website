@@ -1,7 +1,7 @@
 import React from 'react';
 import GameSimulation from './GameSimulation';
 
-function FeatureBlock({ icon, color, title, description }) {
+function _FeatureBlock({ icon, color, title, description }) {
   return (
     <div className="feature-block group relative overflow-hidden">
       <div className={`absolute inset-0 bg-gradient-to-br from-${color}/5 to-${color}/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -59,37 +59,6 @@ function WhatIs() {
             Victory belongs to the best-designed mind.
           </p>
         </div>
-
-        {/* How it works - feature blocks */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 lg:mb-16">
-          <FeatureBlock 
-            icon="ph-fill ph-brain" 
-            color="cosmic-purple-light"
-            title="Program Your Agent" 
-            description="Prompt the AI logic that defines how your agent thinks, moves, and fights. Use advanced strategies, pattern recognition, and tactical planning. Or just plug the MCP into Cursor and let its agent fight for you." 
-          />
-          
-          <FeatureBlock 
-            icon="ph-fill ph-lightning" 
-            color="cosmic-blue-light"
-            title="8x8 Grid Battles" 
-            description="Fight on tactical battlefields with walls, obstacles, and strategic positioning. Every move matters in turn-based combat." 
-          />
-          
-          <FeatureBlock 
-            icon="ph-fill ph-magic-wand" 
-            color="cosmic-orange-light"
-            title="Spell System" 
-            description="Cast fireballs, lightning strikes, healing spells, and more. Manage mana resources and timing for maximum impact." 
-          />
-          
-          <FeatureBlock 
-            icon="ph-fill ph-trophy" 
-            color="cosmic-red-light"
-            title="Watch & Learn" 
-            description="Observe your AI's decision-making process in real-time. See exactly how it analyzes threats and plans attacks." 
-          />
-        </div> */}
 
         {/* Agent Building section */}
         <div className="bg-cosmic-black/60 backdrop-blur-sm rounded-lg border border-cosmic-blue-light/30 p-6 md:p-8">

@@ -352,23 +352,27 @@ function PlayerStats({ player, gameState, isActive, currentThought, isThinking, 
         )}
       </div>
 
-            {/* AI Thought Process */}
-      {isThinking && currentThought && (
-        <div className="mt-4 p-3 bg-cosmic-purple-light/20 rounded border border-cosmic-purple-light/40">
-          <div className="text-cosmic-blue-light font-bold text-xs uppercase tracking-wider mb-2">
-            <i className="ph-fill ph-brain mr-1"></i>
-            AI Decision Process
-          </div>
-          <div className="text-cosmic-white/90 text-sm font-cyber leading-relaxed">
+            {/* AI Thought Process - Always reserve space */}
+      <div className="mt-4 p-3 bg-cosmic-purple-light/20 rounded border border-cosmic-purple-light/40" style={{ minHeight: '120px' }}>
+        <div className="text-cosmic-blue-light font-bold text-xs uppercase tracking-wider mb-2">
+          <i className="ph-fill ph-brain mr-1"></i>
+          AI Decision Process
+        </div>
+        <div className="text-cosmic-white/90 text-sm font-cyber leading-relaxed" style={{ minHeight: '80px' }}>
+          {isThinking && currentThought ? (
             <TypewriterText 
               text={currentThought}
               isVisible={isThinking && !!currentThought}
               speed={30}
               onComplete={onTypewriterComplete}
             />
-          </div>
+          ) : (
+            <span className="text-cosmic-white/40 italic">
+              {isThinking ? 'Analyzing battlefield...' : 'Awaiting turn...'}
+            </span>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -563,25 +567,24 @@ function GameSimulation() {
       <div className="absolute bottom-4 left-4 w-20 h-20 bg-cosmic-purple-light/20 rounded-full blur-xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
       
       <div className="relative z-10">
-        {/* Header */}
-                 <div className="text-center mb-6">
-           <div className="text-cosmic-purple-light font-cyber text-sm uppercase tracking-wider mb-2">
-             {gameState.currentPhase === GAME_PHASES.BATTLE_END 
-               ? `${gameState.winner === 'player1' ? 'ARCANE-AI' : 'MYSTIC-GPT'} WINS!`
-               : gameState.currentPhase.replace(/_/g, ' ').replace('player1', 'ARCANE-AI').replace('player2', 'MYSTIC-GPT')
-             }
-           </div>
-           {gameState.currentPhase === GAME_PHASES.BATTLE_END && (
-             <div className="text-cosmic-white/60 text-xs font-cyber">
-               Resetting battle in a moment...
-             </div>
-           )}
-           {gameState.currentPhase !== GAME_PHASES.BATTLE_END && (
-             <div className="text-cosmic-white/60 text-xs font-cyber">
-               Round {Math.floor(scenarioIndex / 2) + 1} • Scenario {scenarioIndex + 1}/{AI_SCENARIOS.length}
-             </div>
-           )}
-         </div>
+        {/* Header - Fixed height */}
+        <div className="text-center mb-6" style={{ minHeight: '68px' }}>
+          <h3 className="font-pixel text-cosmic-blue-light text-2xl mb-2 tracking-wider">
+            AI BATTLE SIMULATION
+          </h3>
+          <div className="text-cosmic-purple-light font-cyber text-sm uppercase tracking-wider mb-2" style={{ minHeight: '20px' }}>
+            {gameState.currentPhase === GAME_PHASES.BATTLE_END 
+              ? `${gameState.winner === 'player1' ? 'ARCANE-AI' : 'MYSTIC-GPT'} WINS!`
+              : gameState.currentPhase.replace(/_/g, ' ').replace('player1', 'ARCANE-AI').replace('player2', 'MYSTIC-GPT')
+            }
+          </div>
+          <div className="text-cosmic-white/60 text-xs font-cyber" style={{ minHeight: '16px' }}>
+            {gameState.currentPhase === GAME_PHASES.BATTLE_END 
+              ? "Resetting battle in a moment..."
+              : `Round ${Math.floor(scenarioIndex / 2) + 1} • Scenario ${scenarioIndex + 1}/${AI_SCENARIOS.length}`
+            }
+          </div>
+        </div>
 
         {/* Main battle view */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 items-start">
@@ -605,9 +608,9 @@ function GameSimulation() {
               onEffectComplete={removeEffect}
             />
             
-            {/* Current action display */}
-            {currentScenario && isExecuting && (
-              <div className="mt-4 text-center">
+            {/* Current action display - Always reserve space */}
+            <div className="mt-4 text-center" style={{ minHeight: '60px' }}>
+              {currentScenario && isExecuting ? (
                 <div className="inline-block bg-cosmic-black/90 px-4 py-3 rounded-lg border border-cosmic-orange-light/50">
                   <div className="font-cyber text-cosmic-orange-light text-sm font-bold">
                     Executing: {currentScenario.action.type.replace(/_/g, ' ').toUpperCase()}
@@ -616,8 +619,15 @@ function GameSimulation() {
                     Mana Cost: {currentScenario.action.manaCost}
                   </div>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="opacity-0">
+                  <div className="inline-block px-4 py-3">
+                    <div className="text-sm font-bold">Placeholder</div>
+                    <div className="text-xs mt-1">Placeholder</div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Player 2 Stats */}
