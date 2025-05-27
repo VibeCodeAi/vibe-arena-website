@@ -28,45 +28,27 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#what-is" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Game</a>
+          <a href="#what-is" className="text-white hover:text-cosmic-blue-light transition-all duration-300 font-cyber uppercase tracking-wider text-sm hover:drop-shadow-[0_0_8px_rgba(43,93,255,0.6)]">Game</a>
           {/* <a href="#gameplay" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Gameplay</a> */}
-          <a href="#community" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm">Community</a>
-          <a href="#final-cta" className="cosmic-button py-2 px-5 font-cyber uppercase tracking-wider text-sm">Join Waitlist</a>
+          <a href="#community" className="text-white hover:text-cosmic-blue-light transition-all duration-300 font-cyber uppercase tracking-wider text-sm hover:drop-shadow-[0_0_8px_rgba(43,93,255,0.6)]">Community</a>
+          <a href="#final-cta" className="bg-cosmic-blue hover:bg-cosmic-blue-light py-2 px-5 rounded-lg text-white font-cyber uppercase tracking-wider text-sm transition-all duration-300 relative overflow-hidden group border border-cosmic-blue-light/20">
+            <span className="relative z-10">Join Waitlist</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue via-cosmic-purple to-cosmic-blue-light transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+          </a>
         </nav>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-cosmic-black/95 backdrop-blur-md p-6 flex flex-col space-y-5 border-b border-cosmic-blue-light/20">
-            <a 
-              href="#what-is" 
-              className="text-white hover:text-cosmic-blue-light transition duration-200 py-2 font-cyber uppercase tracking-wide text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Game
-            </a>
-            {/* <a 
-              href="#gameplay" 
-              className="text-white hover:text-cosmic-blue-light transition duration-200 py-2 font-cyber uppercase tracking-wide text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Gameplay
-            </a> */}
-            <a 
-              href="#community" 
-              className="text-white hover:text-cosmic-blue-light transition duration-200 py-2 font-cyber uppercase tracking-wide text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Community
-            </a>
-            <a 
-              href="#final-cta" 
-              className="cosmic-button w-full text-center py-3 font-cyber uppercase tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Join Waitlist
+        <nav className={`md:hidden absolute top-full left-0 right-0 bg-cosmic-black/95 backdrop-blur-md border-b border-cosmic-blue-light/20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+          <div className="flex flex-col space-y-4 p-6">
+            <a href="#what-is" className="text-white hover:text-cosmic-blue-light transition-all duration-300 font-cyber uppercase tracking-wider text-sm hover:drop-shadow-[0_0_8px_rgba(43,93,255,0.6)]" onClick={() => setIsMenuOpen(false)}>Game</a>
+            {/* <a href="#gameplay" className="text-white hover:text-cosmic-blue-light transition duration-200 font-cyber uppercase tracking-wider text-sm" onClick={() => setIsMenuOpen(false)}>Gameplay</a> */}
+            <a href="#community" className="text-white hover:text-cosmic-blue-light transition-all duration-300 font-cyber uppercase tracking-wider text-sm hover:drop-shadow-[0_0_8px_rgba(43,93,255,0.6)]" onClick={() => setIsMenuOpen(false)}>Community</a>
+            <a href="#final-cta" className="bg-cosmic-blue hover:bg-cosmic-blue-light py-2 px-5 rounded-lg text-white font-cyber uppercase tracking-wider text-sm transition-all duration-300 relative overflow-hidden group border border-cosmic-blue-light/20 inline-block text-center" onClick={() => setIsMenuOpen(false)}>
+              <span className="relative z-10">Join Waitlist</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue via-cosmic-purple to-cosmic-blue-light transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
             </a>
           </div>
-        )}
+        </nav>
       </div>
     </header>
   );

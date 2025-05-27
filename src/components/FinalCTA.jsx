@@ -116,7 +116,7 @@ function FinalCTA() {
   };
 
   return (
-    <section className="relative py-20 bg-cosmic-black overflow-hidden">
+    <section id="final-cta" className="relative py-20 bg-cosmic-black overflow-hidden">
       {/* Dramatic background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-cosmic-black via-cosmic-orange/10 to-cosmic-black"></div>

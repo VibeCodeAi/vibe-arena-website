@@ -31,7 +31,7 @@ function Hero() {
   };
 
   return (
-    <section id="hero-section" className="min-h-screen flex items-center pt-20 pb-10 px-4 relative overflow-hidden">
+    <section id="hero-section" className="min-h-screen flex items-center pt-20 pb-10 px-4 relative overflow-hidden scan-lines">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-cosmic-black via-cosmic-black/90 to-cosmic-black z-0"></div>
       
@@ -48,8 +48,8 @@ function Hero() {
         {/* Left side content */}
         <div className="flex flex-col justify-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-cyber text-white">
-            <span className="text-cosmic-blue-light block mb-2">Design the player.</span>
-            <span className="text-cosmic-orange-light">Rule the battlefield.</span>
+            <span className="text-cosmic-blue-light block mb-2 text-glow-blue">Design the player.</span>
+            <span className="text-cosmic-orange-light text-glow-orange">Rule the battlefield.</span>
           </h1>
           
           <p className="text-xl font-bold md:font-normal md:text-2xl mb-12 text-gray-200 font-cyber">
@@ -73,10 +73,19 @@ function Hero() {
                 />
                 <button 
                   type="submit" 
-                  className={`cosmic-button py-2 font-cyber tracking-wider text-lg w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full py-4 px-8 font-cyber uppercase tracking-wider text-lg font-bold rounded-lg transition-all duration-300 relative overflow-hidden group ${
+                    isSubmitting 
+                      ? 'bg-cosmic-gray cursor-not-allowed' 
+                      : 'bg-cosmic-blue hover:bg-cosmic-blue-light'
+                  }`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'JOINING...' : 'JOIN THE ARENA EARLY'}
+                  <span className="relative z-10">
+                    {isSubmitting ? 'JOINING...' : 'JOIN THE ARENA EARLY'}
+                  </span>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue via-cosmic-purple to-cosmic-blue-light transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                  )}
                 </button>
                 <p className="text-sm mt-2 text-gray-400 font-cyber">No spam. Only cosmic updates.</p>
               </form>
